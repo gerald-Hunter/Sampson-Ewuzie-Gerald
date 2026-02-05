@@ -79,7 +79,7 @@
                  <Linkedin className="h-6 w-6" />
                </a>
                <a
-                 href="https://wa.me/+234 904 800 6847"
+                 href="https://wa.me/2349048006847?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20work%20and%20would%20like%20to%20discuss%20a%20project.%20My%20name%20is%20________."
                  target="_blank"
                  rel="noopener noreferrer"
                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
@@ -109,7 +109,7 @@
                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/20 to-teal-400/20 flex items-center justify-center shadow-2xl ring-4 ring-primary/20">
                  <div className="text-center">
                    <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-primary/30">G</div>
-                   <p className="text-sm text-muted-foreground mt-2">Your Photo Here</p>
+                   <p className="text-sm text-muted-foreground mt-2">My photo</p>
                  </div>
                </div>
                
@@ -129,8 +129,8 @@
              }}
              className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors"
            >
-             <span className="text-sm mb-2">Scroll Down</span>
-             <ArrowDown className="h-5 w-5" />
+             <span className="hidden lg:block text-sm mb-2">Scroll Down</span>
+             <ArrowDown className="hidden lg:block h-5 w-5" />
            </a>
          </div>
        </div>

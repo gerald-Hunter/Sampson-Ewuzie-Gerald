@@ -40,7 +40,7 @@
    {
      icon: MessageCircle,
      label: "WhatsApp",
-     href: "https://wa.me/+234 904 800 6847", 
+     href: "https://wa.me/2349048006847?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20work%20and%20would%20like%20to%20discuss%20a%20project.%20My%20name%20is%20________.", 
    },
  ];
  

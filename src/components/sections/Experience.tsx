@@ -90,7 +90,7 @@
                        </div>
                        {exp.current && (
                          <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                           Current
+                           Previous
                          </span>
                        )}
                      </div>
