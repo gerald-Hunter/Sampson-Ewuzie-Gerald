@@ -61,7 +61,7 @@
              {/* Social Links */}
              <div className="flex items-center gap-4 mt-8 justify-center lg:justify-start animate-fade-in-up animation-delay-400">
                <a
-                 href="https://github.com/yourusername"
+                 href="https://github.com/gerald-hunter"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
@@ -70,7 +70,7 @@
                  <Github className="h-6 w-6" />
                </a>
                <a
-                 href="https://linkedin.com/in/yourusername"
+                 href="https://linkedin.com/in/chimaobi-sampson-97b041384"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
@@ -79,11 +79,11 @@
                  <Linkedin className="h-6 w-6" />
                </a>
                <a
-                 href="https://wa.me/yourphonenumber"
+                 href="https://wa.me/+234 904 800 6847"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
-                 aria-label="WhatsApp"
+                 aria-label="Hey i'm Gerald Chat me on WhatsApp"
                >
                  <MessageCircle className="h-6 w-6" />
                </a>

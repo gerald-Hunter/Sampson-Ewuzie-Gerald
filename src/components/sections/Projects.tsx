@@ -140,7 +140,7 @@
          <div className="text-center mt-12">
            <Button variant="outline" size="lg" asChild>
              <a
-               href="https://github.com/yourusername"
+               href="https://github.com/gerald-hunter"
                target="_blank"
                rel="noopener noreferrer"
                className="flex items-center gap-2"

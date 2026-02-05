@@ -9,20 +9,20 @@
    {
      icon: Mail,
      label: "Email",
-     value: "gerald@example.com", // TODO: Replace with your email
+     value: "sampsongerald24@gmail.com", 
      href: "mailto:gerald@example.com",
    },
    {
      icon: MapPin,
-     label: "Location",
-     value: "Your City, Country", // TODO: Replace with your location
+     label: "Abuja, Nigeria",
+     value: "Apo Resettlement, Nigeria", 
      href: null,
    },
    {
      icon: Phone,
      label: "Phone",
-     value: "+1 234 567 890", // TODO: Replace with your phone
-     href: "tel:+1234567890",
+     value: "+234 904 800 6847", 
+     href: "tel:+234 904 800 6847",
    },
  ];
  
@@ -30,17 +30,17 @@
    {
      icon: Github,
      label: "GitHub",
-     href: "https://github.com/yourusername", // TODO: Replace
+     href: "https://github.com/gerald-hunter", 
    },
    {
      icon: Linkedin,
      label: "LinkedIn",
-     href: "https://linkedin.com/in/yourusername", // TODO: Replace
+     href: "https://linkedin.com/in/himaobi-sampson-97b041384", 
    },
    {
      icon: MessageCircle,
      label: "WhatsApp",
-     href: "https://wa.me/yourphonenumber", // TODO: Replace
+     href: "https://wa.me/+234 904 800 6847", 
    },
  ];
  
@@ -52,19 +52,22 @@
      e.preventDefault();
      setIsSubmitting(true);
  
-     // TODO: Implement actual form submission
-     // Options:
-     // 1. Use a service like Formspree, EmailJS, or Netlify Forms
-     // 2. Set up a backend API endpoint
-     // 3. Use a serverless function
- 
-     // Simulated submission delay
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    await fetch("https://formspree.io/f/xbdarlzj", { 
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" },
+    });
+
+
      await new Promise((resolve) => setTimeout(resolve, 1000));
  
      setIsSubmitting(false);
      setIsSubmitted(true);
  
-     // Reset after 3 seconds
+     
      setTimeout(() => setIsSubmitted(false), 3000);
    };
  

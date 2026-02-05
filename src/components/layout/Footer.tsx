@@ -2,17 +2,17 @@
  
  const socialLinks = [
    {
-     href: "https://github.com/yourusername", // TODO: Replace with your GitHub URL
+     href: "https://github.com/gerald-hunter",
      icon: Github,
      label: "GitHub",
    },
    {
-     href: "https://linkedin.com/in/yourusername", // TODO: Replace with your LinkedIn URL
+     href: "https://linkedin.com/in/chimaobi-sampson-97b041384", 
      icon: Linkedin,
      label: "LinkedIn",
    },
    {
-     href: "https://wa.me/yourphonenumber", // TODO: Replace with your WhatsApp number (e.g., https://wa.me/1234567890)
+     href: "https://wa.me/+234 904 800 6847",
      icon: MessageCircle,
      label: "WhatsApp",
    },
