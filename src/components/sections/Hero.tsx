@@ -31,7 +31,7 @@
              
              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
                Gerald
-               <span className="block text-gradient mt-2">Software Engineer</span>
+               <span className="block text-gradient pb-3 mt-2">Software Engineer</span>
              </h1>
              
              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-up animation-delay-200">
