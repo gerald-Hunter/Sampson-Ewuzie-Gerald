@@ -91,7 +91,7 @@
            </div>
  
            {/* Profile Image Placeholder */}
-           <div className="flex-shrink-0 animate-scale-in animation-delay-200">
+           <div className="flex-shrink-0 animate-scale-in animation-delay-200 pb-10">
              <div className="relative">
                {/* 
                  TODO: Replace this placeholder with your profile image

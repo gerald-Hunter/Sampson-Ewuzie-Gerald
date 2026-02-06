@@ -69,7 +69,7 @@
                </div>
                <div className="text-center p-4 bg-card rounded-lg border border-border">
                  <div className="text-3xl font-bold text-primary">10+</div>
-                 <div className="text-sm text-muted-foreground">Technologies</div>
+                 <div className="text-sm text-muted-foreground">Tech Stack</div>
                </div>
              </div>
            </div>
