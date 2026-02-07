@@ -7,8 +7,8 @@ Welcome to my portfolio! This repository showcases my projects, skills, and work
 ## 🚀 About Me
 Hi! I'm Gerald, a passionate software engineering student with a focus on frontend development. I enjoy building responsive, user-friendly web applications and continuously learning new technologies.
 
-- 🔭 I’m currently working on improving my **React, JavaScript, and UI/UX skills**
-- 🌱 I’m learning **Spring Boot, C#, and advanced React concepts**
+- 🔭 I’m currently on a pro level when it's comes to **React, JavaScript, typescript, bootstrap, Tailwindcss and UI/UX skills (Figma)**
+- 🌱 I’m learning **Spring Boot, php, node.js and very advanced React concepts**
 - 💬 Ask me about **web development, JavaScript, and React**
 - ⚡ Fun fact: I love **gaming**, especially Free Fire
 
