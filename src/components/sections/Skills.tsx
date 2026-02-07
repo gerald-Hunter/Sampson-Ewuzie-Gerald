@@ -1,31 +1,34 @@
- import { 
-   SiHtml5, 
-   SiCss3, 
-   SiJavascript, 
-   SiReact, 
-   SiTypescript, 
-   SiTailwindcss, 
-   SiGithub, 
-   SiFigma,
-   SiBootstrap 
- } from "react-icons/si";
- 
- const skills = [
-   { name: "HTML", icon: SiHtml5, color: "#E34F26" },
-   { name: "CSS", icon: SiCss3, color: "#1572B6" },
-   { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-   { name: "React", icon: SiReact, color: "#61DAFB" },
-   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-   { name: "GitHub", icon: SiGithub, color: "currentColor" },
-   { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-   { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
- ];
- 
- export function Skills() {
-   return (
-     <section id="skills" className="section-padding">
-       <div className="container-custom">
+import { 
+  SiHtml5, 
+  SiCss3, 
+  SiJavascript, 
+  SiReact, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiGithub, 
+  SiFigma,
+  SiBootstrap 
+} from "react-icons/si";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const skills = [
+  { name: "HTML", icon: SiHtml5, color: "#E34F26" },
+  { name: "CSS", icon: SiCss3, color: "#1572B6" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "GitHub", icon: SiGithub, color: "currentColor" },
+  { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+  { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
+];
+
+export function Skills() {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>();
+
+  return (
+    <section id="skills" className="section-padding" ref={ref}>
+      <div className={`container-custom transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
          <div className="text-center mb-12 md:mb-16">
            <h2 className="text-3xl md:text-4xl font-bold mb-4">
              My <span className="text-gradient">Skills</span>

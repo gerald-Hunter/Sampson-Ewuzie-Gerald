@@ -1,79 +1,81 @@
- import { useState } from "react";
- import { Send, Mail, MapPin, Phone, Github, Linkedin, MessageCircle, CheckCircle } from "lucide-react";
- import { Button } from "@/components/ui/button";
- import { Input } from "@/components/ui/input";
- import { Textarea } from "@/components/ui/textarea";
- import { Label } from "@/components/ui/label";
- 
- const contactInfo = [
-   {
-     icon: Mail,
-     label: "Email",
-     value: "sampsongerald24@gmail.com", 
-     href: "mailto:gerald@example.com",
-   },
-   {
-     icon: MapPin,
-     label: "Abuja, Nigeria",
-     value: "Apo Resettlement, Nigeria", 
-     href: null,
-   },
-   {
-     icon: Phone,
-     label: "Phone",
-     value: "+234 904 800 6847", 
-     href: "tel:+234 904 800 6847",
-   },
- ];
- 
- const socialLinks = [
-   {
-     icon: Github,
-     label: "GitHub",
-     href: "https://github.com/gerald-hunter", 
-   },
-   {
-     icon: Linkedin,
-     label: "LinkedIn",
-     href: "https://linkedin.com/in/himaobi-sampson-97b041384", 
-   },
-   {
-     icon: MessageCircle,
-     label: "WhatsApp",
-     href: "https://wa.me/2349048006847?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20work%20and%20would%20like%20to%20discuss%20a%20project.%20My%20name%20is%20________.", 
-   },
- ];
- 
- export function Contact() {
-   const [isSubmitting, setIsSubmitting] = useState(false);
-   const [isSubmitted, setIsSubmitted] = useState(false);
- 
-   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-     e.preventDefault();
-     setIsSubmitting(true);
- 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+import { useState } from "react";
+import { Send, Mail, MapPin, Phone, Github, Linkedin, MessageCircle, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-    await fetch("https://formspree.io/f/xbdarlzj", { 
-      method: "POST",
-      body: formData,
-      headers: { "Accept": "application/json" },
-    });
+const contactInfo = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "sampsongerald24@gmail.com", 
+    href: "mailto:gerald@example.com",
+  },
+  {
+    icon: MapPin,
+    label: "Abuja, Nigeria",
+    value: "Apo Resettlement, Nigeria", 
+    href: null,
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+234 904 800 6847", 
+    href: "tel:+234 904 800 6847",
+  },
+];
+
+const socialLinks = [
+  {
+    icon: Github,
+    label: "GitHub",
+    href: "https://github.com/gerald-hunter", 
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/himaobi-sampson-97b041384", 
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    href: "https://wa.me/2349048006847?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20work%20and%20would%20like%20to%20discuss%20a%20project.%20My%20name%20is%20________.", 
+  },
+];
+
+export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+   const form = e.currentTarget;
+   const formData = new FormData(form);
+
+   await fetch("https://formspree.io/f/xbdarlzj", { 
+     method: "POST",
+     body: formData,
+     headers: { "Accept": "application/json" },
+   });
 
 
-     await new Promise((resolve) => setTimeout(resolve, 1000));
- 
-     setIsSubmitting(false);
-     setIsSubmitted(true);
- 
-     
-     setTimeout(() => setIsSubmitted(false), 3000);
-   };
- 
-   return (
-     <section id="contact" className="section-padding section-alt">
-       <div className="container-custom">
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+
+    
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
+
+  return (
+    <section id="contact" className="section-padding section-alt" ref={ref}>
+      <div className={`container-custom transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
          <div className="text-center mb-12 md:mb-16">
            <h2 className="text-3xl md:text-4xl font-bold mb-4">
              Get In <span className="text-gradient">Touch</span>
