@@ -1,5 +1,6 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Import project screenshots
 import taskflowImg from "@/assets/taskflow-screenshot.jpg";
@@ -103,31 +104,27 @@ const projects = [
                    ))}
                  </div>
  
-                 {/* Links */}
-                 <div className="flex items-center gap-3">
-                   <Button variant="outline" size="sm" asChild>
-                     <a
-                       href={project.githubUrl}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex items-center gap-2"
-                     >
-                       <Github className="h-4 w-4" />
-                       Code
-                     </a>
-                   </Button>
-                   <Button size="sm" asChild>
-                     <a
-                       href={project.liveUrl}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex items-center gap-2"
-                     >
-                       <ExternalLink className="h-4 w-4" />
-                       Live Demo
-                     </a>
-                   </Button>
-                 </div>
+                {/* Links */}
+                  <div className="flex items-center gap-3">
+                    <Button variant="outline" size="sm" asChild>
+                      <Link
+                        to={`/coming-soon?project=${encodeURIComponent(project.title)}&type=code`}
+                        className="flex items-center gap-2"
+                      >
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                    <Button size="sm" asChild>
+                      <Link
+                        to={`/coming-soon?project=${encodeURIComponent(project.title)}&type=demo`}
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Live Demo
+                      </Link>
+                    </Button>
+                  </div>
                </div>
              </article>
            ))}
