@@ -1,6 +1,7 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Import project screenshots
 import taskflowImg from "@/assets/taskflow-screenshot.jpg";
@@ -52,10 +53,12 @@ const projects = [
   },
 ];
  
- export function Projects() {
-   return (
-     <section id="projects" className="section-padding section-alt">
-       <div className="container-custom">
+export function Projects() {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>();
+
+  return (
+    <section id="projects" className="section-padding section-alt" ref={ref}>
+      <div className={`container-custom transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
          <div className="text-center mb-12 md:mb-16">
            <h2 className="text-3xl md:text-4xl font-bold mb-4">
              Featured <span className="text-gradient">Projects</span>

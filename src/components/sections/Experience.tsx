@@ -1,55 +1,58 @@
- import { Briefcase, Calendar } from "lucide-react";
- 
- // Experience data - TODO: Replace with your actual experience
- const experiences = [
-   {
-     id: 1,
-     role: "Senior Frontend Developer",
-     company: "Tech Innovations Inc.",
-     location: "Remote",
-     period: "2023 - Present",
-     description: [
-       "Lead development of responsive web applications using React and TypeScript",
-       "Collaborate with design team to implement pixel-perfect UI components",
-       "Mentor junior developers and conduct code reviews",
-       "Optimize application performance and improve load times by 40%",
-     ],
-     current: true,
-   },
-   {
-     id: 2,
-     role: "Frontend Developer",
-     company: "Digital Solutions Ltd.",
-     location: "Hybrid",
-     period: "2022 - 2023",
-     description: [
-       "Developed and maintained multiple client-facing web applications",
-       "Implemented responsive designs using Tailwind CSS and Bootstrap",
-       "Integrated RESTful APIs and managed state with React Query",
-       "Participated in agile development processes and sprint planning",
-     ],
-     current: false,
-   },
-   {
-     id: 3,
-     role: "Junior Web Developer",
-     company: "Creative Agency Co.",
-     location: "On-site",
-     period: "2021 - 2022",
-     description: [
-       "Built interactive websites using HTML, CSS, and JavaScript",
-       "Assisted in UI/UX design decisions and prototyping in Figma",
-       "Maintained and updated existing client websites",
-       "Learned modern frameworks and best practices",
-     ],
-     current: false,
-   },
- ];
- 
- export function Experience() {
-   return (
-     <section id="experience" className="section-padding">
-       <div className="container-custom">
+import { Briefcase, Calendar } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+// Experience data - TODO: Replace with your actual experience
+const experiences = [
+  {
+    id: 1,
+    role: "Senior Frontend Developer",
+    company: "Tech Innovations Inc.",
+    location: "Remote",
+    period: "2023 - Present",
+    description: [
+      "Lead development of responsive web applications using React and TypeScript",
+      "Collaborate with design team to implement pixel-perfect UI components",
+      "Mentor junior developers and conduct code reviews",
+      "Optimize application performance and improve load times by 40%",
+    ],
+    current: true,
+  },
+  {
+    id: 2,
+    role: "Frontend Developer",
+    company: "Digital Solutions Ltd.",
+    location: "Hybrid",
+    period: "2022 - 2023",
+    description: [
+      "Developed and maintained multiple client-facing web applications",
+      "Implemented responsive designs using Tailwind CSS and Bootstrap",
+      "Integrated RESTful APIs and managed state with React Query",
+      "Participated in agile development processes and sprint planning",
+    ],
+    current: false,
+  },
+  {
+    id: 3,
+    role: "Junior Web Developer",
+    company: "Creative Agency Co.",
+    location: "On-site",
+    period: "2021 - 2022",
+    description: [
+      "Built interactive websites using HTML, CSS, and JavaScript",
+      "Assisted in UI/UX design decisions and prototyping in Figma",
+      "Maintained and updated existing client websites",
+      "Learned modern frameworks and best practices",
+    ],
+    current: false,
+  },
+];
+
+export function Experience() {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>();
+
+  return (
+    <section id="experience" className="section-padding" ref={ref}>
+      <div className={`container-custom transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
          <div className="text-center mb-12 md:mb-16">
            <h2 className="text-3xl md:text-4xl font-bold mb-4">
              Work <span className="text-gradient">Experience</span>

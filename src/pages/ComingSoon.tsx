@@ -1,9 +1,10 @@
 import { ArrowLeft, Rocket, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 export default function ComingSoon() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const projectName = searchParams.get("project") || "This Project";
   const type = searchParams.get("type") || "demo"; // 'demo' or 'code'
 
@@ -61,11 +62,19 @@ export default function ComingSoon() {
         </div>
 
         {/* Back Button */}
-        <Button asChild variant="outline" size="lg">
-          <Link to="/#projects" className="flex items-center gap-2">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Portfolio
-          </Link>
+        <Button 
+          variant="outline" 
+          size="lg" 
+          onClick={() => {
+            navigate("/");
+            setTimeout(() => {
+              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+          }}
+          className="flex items-center gap-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Portfolio
         </Button>
       </div>
     </div>

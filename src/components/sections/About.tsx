@@ -1,32 +1,39 @@
- import { Code2, Palette, Lightbulb, Users } from "lucide-react";
- 
- const highlights = [
-   {
-     icon: Code2,
-     title: "Clean Code",
-     description: "Writing maintainable, scalable code that stands the test of time",
-   },
-   {
-     icon: Palette,
-     title: "UI/UX Design",
-     description: "Creating intuitive interfaces with exceptional user experiences",
-   },
-   {
-     icon: Lightbulb,
-     title: "Problem Solver",
-     description: "Turning complex challenges into elegant, simple solutions",
-   },
-   {
-     icon: Users,
-     title: "Team Player",
-     description: "Collaborating effectively to deliver outstanding results",
-   },
- ];
- 
- export function About() {
-   return (
-     <section id="about" className="section-padding section-alt">
-       <div className="container-custom">
+import { Code2, Palette, Lightbulb, Users } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const highlights = [
+  {
+    icon: Code2,
+    title: "Clean Code",
+    description: "Writing maintainable, scalable code that stands the test of time",
+  },
+  {
+    icon: Palette,
+    title: "UI/UX Design",
+    description: "Creating intuitive interfaces with exceptional user experiences",
+  },
+  {
+    icon: Lightbulb,
+    title: "Problem Solver",
+    description: "Turning complex challenges into elegant, simple solutions",
+  },
+  {
+    icon: Users,
+    title: "Team Player",
+    description: "Collaborating effectively to deliver outstanding results",
+  },
+];
+
+export function About() {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>();
+
+  return (
+    <section 
+      id="about" 
+      className="section-padding section-alt"
+      ref={ref}
+    >
+      <div className={`container-custom transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
          <div className="text-center mb-12 md:mb-16">
            <h2 className="text-3xl md:text-4xl font-bold mb-4">
              About <span className="text-gradient">Me</span>
