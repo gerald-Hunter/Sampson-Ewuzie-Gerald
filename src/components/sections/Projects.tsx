@@ -1,54 +1,64 @@
- import { ExternalLink, Github, Folder } from "lucide-react";
- import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+// Import project screenshots
+import taskflowImg from "@/assets/taskflow-screenshot.jpg";
+import shopeaseImg from "@/assets/shopease-screenshot.jpg";
+import devconnectImg from "@/assets/devconnect-screenshot.jpg";
+import weatherlensImg from "@/assets/weatherlens-screenshot.jpg";
+
+// Project data - TODO: Replace with your actual projects
+const projects = [
+  {
+    id: 1,
+    title: "TaskFlow",
+    description:
+      "A collaborative project management dashboard that helps teams organize tasks, track progress, and meet deadlines efficiently. Features real-time updates and intuitive drag-and-drop functionality.",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
+    githubUrl: "https://github.com/yourusername/taskflow", // TODO: Replace with your URL
+    liveUrl: "https://taskflow-demo.vercel.app", // TODO: Replace with your URL
+    image: taskflowImg,
+  },
+  {
+    id: 2,
+    title: "ShopEase",
+    description:
+      "A modern e-commerce landing page with responsive design, product showcases, and smooth animations. Built with vanilla technologies for optimal performance and accessibility.",
+    techStack: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+    githubUrl: "https://github.com/yourusername/shopease", // TODO: Replace with your URL
+    liveUrl: "https://shopease-demo.vercel.app", // TODO: Replace with your URL
+    image: shopeaseImg,
+  },
+  {
+    id: 3,
+    title: "DevConnect",
+    description:
+      "A developer networking platform where programmers can connect, share projects, and collaborate. Features include user profiles, project showcases, and real-time messaging.",
+    techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
+    githubUrl: "https://github.com/yourusername/devconnect", // TODO: Replace with your URL
+    liveUrl: "https://devconnect-demo.vercel.app", // TODO: Replace with your URL
+    image: devconnectImg,
+  },
+  {
+    id: 4,
+    title: "WeatherLens",
+    description:
+      "A real-time weather visualization application with beautiful UI, location-based forecasts, and interactive charts. Integrates multiple weather APIs for accurate data.",
+    techStack: ["React", "Chart.js", "Weather API", "Tailwind CSS"],
+    githubUrl: "https://github.com/yourusername/weatherlens", // TODO: Replace with your URL
+    liveUrl: "https://weatherlens-demo.vercel.app", // TODO: Replace with your URL
+    image: weatherlensImg,
+  },
+];
  
- // Project data - TODO: Replace with your actual projects
- const projects = [
-   {
-     id: 1,
-     title: "TaskFlow",
-     description:
-       "A collaborative project management dashboard that helps teams organize tasks, track progress, and meet deadlines efficiently. Features real-time updates and intuitive drag-and-drop functionality.",
-     techStack: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
-     githubUrl: "https://github.com/yourusername/taskflow", // TODO: Replace with your URL
-     liveUrl: "https://taskflow-demo.vercel.app", // TODO: Replace with your URL
-     image: null, // TODO: Add project screenshot
-   },
-   {
-     id: 2,
-     title: "ShopEase",
-     description:
-       "A modern e-commerce landing page with responsive design, product showcases, and smooth animations. Built with vanilla technologies for optimal performance and accessibility.",
-     techStack: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-     githubUrl: "https://github.com/yourusername/shopease", // TODO: Replace with your URL
-     liveUrl: "https://shopease-demo.vercel.app", // TODO: Replace with your URL
-     image: null, // TODO: Add project screenshot
-   },
-   {
-     id: 3,
-     title: "DevConnect",
-     description:
-       "A developer networking platform where programmers can connect, share projects, and collaborate. Features include user profiles, project showcases, and real-time messaging.",
-     techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
-     githubUrl: "https://github.com/yourusername/devconnect", // TODO: Replace with your URL
-     liveUrl: "https://devconnect-demo.vercel.app", // TODO: Replace with your URL
-     image: null, // TODO: Add project screenshot
-   },
-   {
-     id: 4,
-     title: "WeatherLens",
-     description:
-       "A real-time weather visualization application with beautiful UI, location-based forecasts, and interactive charts. Integrates multiple weather APIs for accurate data.",
-     techStack: ["React", "Chart.js", "Weather API", "Tailwind CSS"],
-     githubUrl: "https://github.com/yourusername/weatherlens", // TODO: Replace with your URL
-     liveUrl: "https://weatherlens-demo.vercel.app", // TODO: Replace with your URL
-     image: null, // TODO: Add project screenshot
-   },
- ];
- 
- export function Projects() {
-   return (
-     <section id="projects" className="section-padding section-alt">
-       <div className="container-custom">
+export function Projects() {
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>();
+
+  return (
+    <section id="projects" className="section-padding section-alt" ref={ref}>
+      <div className={`container-custom transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
          <div className="text-center mb-12 md:mb-16">
            <h2 className="text-3xl md:text-4xl font-bold mb-4">
              Featured <span className="text-gradient">Projects</span>
@@ -65,25 +75,16 @@
                className="group bg-card rounded-xl border border-border overflow-hidden card-hover"
                style={{ animationDelay: `${index * 100}ms` }}
              >
-               {/* Project Image Placeholder */}
-               {/* 
-                 TODO: Replace placeholder with actual project screenshots
-                 
-                 How to add project images:
-                 1. Add your screenshot to src/assets/ folder (e.g., taskflow-screenshot.jpg)
-                 2. Import it at the top: import taskflowImg from "@/assets/taskflow-screenshot.jpg"
-                 3. Update the project object: image: taskflowImg
-                 4. Use <img src={project.image} alt={project.title} className="..." /> below
-               */}
-               <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center relative overflow-hidden">
-                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-teal-400/5" />
-                 <div className="relative z-10 text-center p-6">
-                   <Folder className="h-12 w-12 text-primary/30 mx-auto mb-2" />
-                   <p className="text-sm text-muted-foreground">Project Screenshot</p>
-                 </div>
-                 {/* Hover overlay */}
-                 <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-               </div>
+              {/* Project Image */}
+                <div className="aspect-video bg-muted relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} screenshot`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
  
                {/* Project Content */}
                <div className="p-6">
@@ -106,31 +107,27 @@
                    ))}
                  </div>
  
-                 {/* Links */}
-                 <div className="flex items-center gap-3">
-                   <Button variant="outline" size="sm" asChild>
-                     <a
-                       href={project.githubUrl}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex items-center gap-2"
-                     >
-                       <Github className="h-4 w-4" />
-                       Code
-                     </a>
-                   </Button>
-                   <Button size="sm" asChild>
-                     <a
-                       href={project.liveUrl}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex items-center gap-2"
-                     >
-                       <ExternalLink className="h-4 w-4" />
-                       Live Demo
-                     </a>
-                   </Button>
-                 </div>
+                {/* Links */}
+                  <div className="flex items-center gap-3">
+                    <Button variant="outline" size="sm" asChild>
+                      <Link
+                        to={`/coming-soon?project=${encodeURIComponent(project.title)}&type=code`}
+                        className="flex items-center gap-2"
+                      >
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                    <Button size="sm" asChild>
+                      <Link
+                        to={`/coming-soon?project=${encodeURIComponent(project.title)}&type=demo`}
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Live Demo
+                      </Link>
+                    </Button>
+                  </div>
                </div>
              </article>
            ))}
