@@ -33,131 +33,128 @@ export default function Resume() {
       <div className="container-custom py-8 print:py-0">
         <div className="max-w-[8.5in] mx-auto bg-white text-black shadow-lg print:shadow-none">
           {/* Resume Content */}
-          <div className="p-8 md:p-12 print:p-8 space-y-6">
+          <div className="p-8 md:p-10 print:p-6 space-y-5">
             
             {/* Header */}
-            <header className="text-center border-b border-gray-300 pb-4">
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase tracking-wide">
+            <header className="text-center border-b-2 border-gray-800 pb-3">
+              <h1 className="text-2xl font-bold text-gray-900 uppercase tracking-wider">
                 Sampson-Ewuzie Chimaobi Gerald
               </h1>
-              <p className="text-sm text-gray-600 mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+              <p className="text-xs text-gray-600 mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                 <span className="flex items-center gap-1">
                   <MapPin className="h-3 w-3" />
-                  Apo Resettlement, Nigeria
+                  Abuja, Nigeria
                 </span>
+                <span>•</span>
                 <span className="flex items-center gap-1">
                   <Mail className="h-3 w-3" />
                   sampsonchimaobi24@gmail.com
                 </span>
-              </p>
-              <p className="text-sm text-gray-600 mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+                <span>•</span>
                 <a 
                   href="https://geraldpersonalportfolio-three.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:text-gray-900 transition-colors"
+                  className="flex items-center gap-1 hover:text-gray-900 underline"
                 >
-                  <Globe className="h-3 w-3" />
                   Portfolio
                 </a>
+                <span>•</span>
                 <a 
                   href="https://github.com/gerald-hunter" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:text-gray-900 transition-colors"
+                  className="flex items-center gap-1 hover:text-gray-900 underline"
                 >
-                  <Github className="h-3 w-3" />
                   GitHub
                 </a>
+                <span>•</span>
                 <a 
                   href="https://linkedin.com/in/chimaobi-sampson-97b041384" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:text-gray-900 transition-colors"
+                  className="flex items-center gap-1 hover:text-gray-900 underline"
                 >
-                  <Linkedin className="h-3 w-3" />
                   LinkedIn
                 </a>
               </p>
             </header>
 
-            {/* Professional Summary */}
+            {/* Objective */}
             <section>
-              <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-1 mb-3">
-                Professional Summary
+              <h2 className="text-xs font-bold text-gray-900 uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
+                Objective
               </h2>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                Software Engineering Student (200 Level) with a strong focus on frontend development. 
-                Skilled in building responsive, user-friendly web interfaces using modern frontend technologies. 
-                Seeking a Frontend Development Internship to apply technical skills, gain real-world experience, 
-                and grow as a frontend engineer.
+              <p className="text-xs text-gray-700 leading-relaxed">
+                Frontend-focused Software Engineering student seeking an internship to build production-ready 
+                web interfaces and contribute to real-world projects.
               </p>
             </section>
 
             {/* Technical Skills */}
             <section>
-              <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-1 mb-3">
-                Technical Skills
+              <h2 className="text-xs font-bold text-gray-900 uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
+                Skills
               </h2>
-              <div className="text-sm text-gray-700 space-y-1">
+              <div className="text-xs text-gray-700 grid grid-cols-1 gap-1">
                 <p>
-                  <span className="font-semibold">Languages & Technologies:</span>{" "}
-                  HTML, CSS, Bootstrap, JavaScript, TypeScript, Tailwind CSS, React
+                  <span className="font-semibold">Frontend:</span>{" "}
+                  HTML, CSS, JavaScript, TypeScript, React, Tailwind CSS, Bootstrap
                 </p>
                 <p>
                   <span className="font-semibold">Tools:</span>{" "}
-                  Git, GitHub
+                  Git, GitHub, VS Code, Figma
                 </p>
               </div>
             </section>
 
             {/* Experience */}
             <section>
-              <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-1 mb-3">
+              <h2 className="text-xs font-bold text-gray-900 uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
                 Experience
               </h2>
               <div>
-                <div className="flex flex-wrap justify-between items-baseline">
-                  <h3 className="text-sm font-semibold text-gray-900">Frontend Intern</h3>
-                  <span className="text-xs text-gray-600">Helpman Organization</span>
+                <div className="flex justify-between items-baseline">
+                  <h3 className="text-sm font-semibold text-gray-900">Frontend Development Intern</h3>
+                  <span className="text-xs text-gray-600 font-medium">Helpman Organization</span>
                 </div>
-                <ul className="text-sm text-gray-700 mt-2 space-y-1 list-disc list-outside ml-4">
-                  <li>Assisted in developing and maintaining frontend components for web applications</li>
-                  <li>Worked with HTML, CSS, and JavaScript to improve user interfaces and enhance user experience</li>
-                  <li>Collaborated with team members on internship tasks and contributed to project deliverables</li>
+                <ul className="text-xs text-gray-700 mt-1.5 space-y-1 list-disc list-outside ml-4">
+                  <li>Built and maintained responsive UI components using HTML, CSS, and JavaScript</li>
+                  <li>Improved page load performance and cross-browser compatibility</li>
+                  <li>Collaborated with designers to translate mockups into functional interfaces</li>
                 </ul>
               </div>
             </section>
 
             {/* Projects */}
             <section>
-              <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-1 mb-3">
+              <h2 className="text-xs font-bold text-gray-900 uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
                 Projects
               </h2>
               <div>
-                <div className="flex flex-wrap justify-between items-baseline">
-                  <h3 className="text-sm font-semibold text-gray-900">Furniture Website</h3>
+                <div className="flex justify-between items-baseline">
+                  <h3 className="text-sm font-semibold text-gray-900">Furniture E-Commerce Website</h3>
                   <span className="text-xs text-gray-600">HTML, CSS, JavaScript</span>
                 </div>
-                <ul className="text-sm text-gray-700 mt-2 space-y-1 list-disc list-outside ml-4">
-                  <li>Built a responsive frontend website displaying furniture products for users to browse and select for ordering</li>
-                  <li>Focused on clean UI design, structured layouts, and mobile responsiveness</li>
-                  <li>Implemented interactive features using JavaScript for improved user experience</li>
+                <ul className="text-xs text-gray-700 mt-1.5 space-y-1 list-disc list-outside ml-4">
+                  <li>Developed a fully responsive product catalog with filtering and sorting functionality</li>
+                  <li>Implemented mobile-first design achieving consistent UX across all devices</li>
+                  <li>Optimized images and assets for fast load times</li>
                 </ul>
               </div>
             </section>
 
             {/* Education */}
             <section>
-              <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-300 pb-1 mb-3">
+              <h2 className="text-xs font-bold text-gray-900 uppercase tracking-widest border-b border-gray-400 pb-1 mb-2">
                 Education
               </h2>
-              <div className="flex flex-wrap justify-between items-baseline">
+              <div className="flex justify-between items-baseline">
                 <div>
                   <h3 className="text-sm font-semibold text-gray-900">B.Sc. Software Engineering</h3>
-                  <p className="text-sm text-gray-600">Veritas University, Abuja, Nigeria</p>
+                  <p className="text-xs text-gray-600">Veritas University, Abuja</p>
                 </div>
-                <span className="text-xs text-gray-600">200 Level (In Progress)</span>
+                <span className="text-xs text-gray-600 font-medium">Expected 2027</span>
               </div>
             </section>
 
