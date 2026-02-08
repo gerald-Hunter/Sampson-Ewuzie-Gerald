@@ -1,21 +1,24 @@
- import { useState, useEffect } from "react";
- import { Menu, X, Moon, Sun } from "lucide-react";
- import { useTheme } from "@/contexts/ThemeContext";
- import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { Menu, X, Moon, Sun, FileText } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
+import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
+
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
+];
  
- const navLinks = [
-   { href: "#home", label: "Home" },
-   { href: "#about", label: "About" },
-   { href: "#skills", label: "Skills" },
-   { href: "#projects", label: "Projects" },
-   { href: "#experience", label: "Experience" },
-   { href: "#contact", label: "Contact" },
- ];
- 
- export function Navbar() {
-   const [isOpen, setIsOpen] = useState(false);
-   const [isScrolled, setIsScrolled] = useState(false);
-   const { theme, toggleTheme } = useTheme();
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
  
    useEffect(() => {
      const handleScroll = () => {
@@ -55,37 +58,46 @@
              Gerald<span className="text-primary">.</span>
            </a>
  
-           {/* Desktop Navigation */}
-           <div className="hidden md:flex items-center gap-1">
-             {navLinks.map((link) => (
-               <a
-                 key={link.href}
-                 href={link.href}
-                 onClick={(e) => {
-                   e.preventDefault();
-                   handleNavClick(link.href);
-                 }}
-                 className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-accent"
-               >
-                 {link.label}
-               </a>
-             ))}
-             
-             {/* Theme Toggle */}
-             <Button
-               variant="ghost"
-               size="icon"
-               onClick={toggleTheme}
-               className="ml-2"
-               aria-label="Toggle theme"
-             >
-               {theme === "light" ? (
-                 <Moon className="h-5 w-5" />
-               ) : (
-                 <Sun className="h-5 w-5" />
-               )}
-             </Button>
-           </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-1">
+              {isHomePage && navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-accent"
+                >
+                  {link.label}
+                </a>
+              ))}
+              
+              {/* Resume Link */}
+              <Link
+                to="/resume"
+                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-accent flex items-center gap-1"
+              >
+                <FileText className="h-4 w-4" />
+                Resume
+              </Link>
+              
+              {/* Theme Toggle */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="ml-2"
+                aria-label="Toggle theme"
+              >
+                {theme === "light" ? (
+                  <Moon className="h-5 w-5" />
+                ) : (
+                  <Sun className="h-5 w-5" />
+                )}
+              </Button>
+            </div>
  
            {/* Mobile Menu Button */}
            <div className="flex items-center gap-2 md:hidden">
@@ -119,21 +131,29 @@
              isOpen ? "max-h-96 pb-4" : "max-h-0"
            }`}
          >
-           <div className="flex flex-col gap-1 pt-2">
-             {navLinks.map((link) => (
-               <a
-                 key={link.href}
-                 href={link.href}
-                 onClick={(e) => {
-                   e.preventDefault();
-                   handleNavClick(link.href);
-                 }}
-                 className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-accent"
-               >
-                 {link.label}
-               </a>
-             ))}
-           </div>
+            <div className="flex flex-col gap-1 pt-2">
+              {isHomePage && navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-accent"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <Link
+                to="/resume"
+                className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-accent flex items-center gap-1"
+                onClick={() => setIsOpen(false)}
+              >
+                <FileText className="h-4 w-4" />
+                Resume
+              </Link>
+            </div>
          </div>
        </div>
      </nav>
