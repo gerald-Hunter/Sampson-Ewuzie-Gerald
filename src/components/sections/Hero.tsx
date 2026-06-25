@@ -1,5 +1,6 @@
  import { ArrowDown, Github, Linkedin, MessageCircle } from "lucide-react";
  import { Button } from "@/components/ui/button";
+ import profile from "../assets/profile.jpg";
  
  export function Hero() {
    const handleScrollToContact = () => {
@@ -93,19 +94,14 @@
            {/* Profile Image Placeholder */}
            <div className="flex-shrink-0 animate-scale-in animation-delay-200 pb-10">
              <div className="relative">
-               {/* 
-                 TODO: Replace this placeholder with your profile image
-                 
-                 How to add your image:
-                 1. Add your image file to src/assets/ folder (e.g., profile.jpg)
-                 2. Import it at the top of this file: import profileImg from "@/assets/profile.jpg"
-                 3. Replace the placeholder div below with:
+               {
+                
                     <img 
-                      src={profileImg} 
+                      src={profile} 
                       alt="Gerald - Software Engineer" 
                       className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl ring-4 ring-primary/20"
                     />
-               */}
+               }
                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/20 to-teal-400/20 flex items-center justify-center shadow-2xl ring-4 ring-primary/20">
                  <div className="text-center">
                    <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-primary/30">G</div>
