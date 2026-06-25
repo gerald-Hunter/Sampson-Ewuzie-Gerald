@@ -1,38 +1,55 @@
-# Gerald's Portfolio
+# Personal Portfolio Website
 
-Welcome to my portfolio! This repository showcases my projects, skills, and work as a **Software Engineer & Frontend Developer**.
+A modern and responsive portfolio website built to showcase my skills, projects, and journey as a Software Engineering student.
+
+## 🚀 Live Demo
+
+Visit the live website:
+https://sampsonewzuiegerald.vercel.app/
+
+## 📌 Features
+
+* Responsive design for mobile, tablet, and desktop devices
+* Modern and clean user interface
+* About Me section
+* Skills showcase
+* Project showcase
+* Contact section
+* Smooth navigation experience
+
+## 🛠️ Built With
+
+* HTML5
+* CSS3
+* JavaScript
+* React
+* TailwindCSS
+* Git & GitHub
+
+## 🎯 Purpose
+
+This portfolio serves as a central place to showcase my work, technical skills, and growth as a developer. It reflects my passion for web development and commitment to learning modern technologies every day.
+
+## 📸 Preview
+
+
+
+## 🌱 Future Improvements
+
+* Update my profile picture later with a real photo of myself
+* Add and improve project demos so the live demo links show the actual projects instead of "Coming Soon"
+* No other major improvements at the moment, but I will share any future updates if needed
+
+## 👨‍💻 Author
+
+Gerald
+
+Software Engineering Student passionate about building modern web applications and creating solutions that make a real impact.
+
+## 📫 Connect With Me
+
+GitHub: https://github.com/gerald-Hunter
 
 ---
 
-## 🚀 About Me
-Hi! I'm Gerald, a passionate software engineering student with a focus on frontend development. I enjoy building responsive, user-friendly web applications and continuously learning new technologies.
-
-- 🔭 I’m currently on a pro level when it's comes to **React, JavaScript, typescript, bootstrap, Tailwindcss and UI/UX skills (Figma)**
-- 🌱 I’m learning **Spring Boot, php, node.js and very advanced React concepts**
-- 💬 Ask me about **web development, JavaScript, and React**
-- ⚡ Fun fact: I love **gaming**, especially Free Fire
-
----
-
-## 💻 Skills
-**Languages:** HTML, CSS, JavaScript, Java, Python, C#  
-**Frameworks & Libraries:** React, Tailwind CSS, Bootstrap, Spring Boot  
-**Tools & Platforms:** Git, GitHub, Vercel, MetaTrader 5, Figma  
-
----
-
-
-## 📫 Contact
-You can reach me via:
-
-- **Email:** (sampsonchimaobi24@gmail.com) 
-- **LinkedIn:** (https://linkedin.com/in/himaobi-sampson-97b041384)
-- **GitHub:** (https://github.com/gerald-hunter)
-
----
-
-## ⭐ Support
-If you like my work, feel free to **star** this repository or **connect** with me!
-
----
-
+⭐ If you like this project, consider giving it a star.
