@@ -31,8 +31,7 @@ https://sampsonewzuiegerald.vercel.app/
 This portfolio serves as a central place to showcase my work, technical skills, and growth as a developer. It reflects my passion for web development and commitment to learning modern technologies every day.
 
 ## 📸 Preview
-
-
+<img width="1906" height="895" alt="image" src="https://github.com/user-attachments/assets/8fdf5e92-005c-4040-a132-3d14161a2f72" />
 
 ## 🌱 Future Improvements
 
