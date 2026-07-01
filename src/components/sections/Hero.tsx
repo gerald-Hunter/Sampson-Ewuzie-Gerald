@@ -1,6 +1,6 @@
  import { ArrowDown, Github, Linkedin, MessageCircle } from "lucide-react";
  import { Button } from "@/components/ui/button";
-import profile  from "@/assets/profile.jpg";
+import profile  from "@/assets/Profile.png";
  
  export function Hero() {
    const handleScrollToContact = () => {
